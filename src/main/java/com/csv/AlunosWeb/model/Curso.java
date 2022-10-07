@@ -1,4 +1,4 @@
-package model;
+package com.csv.AlunosWeb.model;
 
 public class Curso {
 
