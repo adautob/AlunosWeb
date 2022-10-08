@@ -3,7 +3,7 @@ package com.csv.AlunosWeb.model;
 public class Curso {
 
 	private int id;
-	private String descrição;
+	private String nomeCurso;
 	private String cargaHoraria;
 	
 	
@@ -14,10 +14,10 @@ public class Curso {
 
 
 
-	public Curso(int id, String descrição, String cargaHoraria) {
+	public Curso(int id, String nomeCurso, String cargaHoraria) {
 		super();
 		this.id = id;
-		this.descrição = descrição;
+		this.nomeCurso = nomeCurso;
 		this.cargaHoraria = cargaHoraria;
 	}
 
@@ -36,13 +36,13 @@ public class Curso {
 
 
 	public String getDescrição() {
-		return descrição;
+		return nomeCurso;
 	}
 
 
 
-	public void setDescrição(String descrição) {
-		this.descrição = descrição;
+	public void setDescrição(String nomeCurso) {
+		this.nomeCurso = nomeCurso;
 	}
 
 
@@ -61,7 +61,7 @@ public class Curso {
 
 	@Override
 	public String toString() {
-		return "Curso [id=" + id + ", descrição=" + descrição + ", cargaHoraria=" + cargaHoraria + "]";
+		return "Curso [id=" + id + ", curso=" + nomeCurso + ", cargaHoraria=" + cargaHoraria + "]";
 	}
 	
 	

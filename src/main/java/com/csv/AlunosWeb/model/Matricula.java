@@ -5,18 +5,18 @@ public class Matricula {
 	private int id;
 	private Aluno aluno;
 	private Curso curso;
-	private enum Status {
+	public enum StatusCurso {
 		EM_ANDAMENTO,
 		CONCLUIDO
 	}
-	Status status;
+	StatusCurso status;
 	
 	
 	public Matricula() {
 		super();
 	}
 
-	public Matricula(int id, Aluno aluno, Curso curso, Status status) {
+	public Matricula(int id, Aluno aluno, Curso curso, StatusCurso status) {
 		super();
 		this.id = id;
 		this.aluno = aluno;
@@ -48,11 +48,11 @@ public class Matricula {
 		this.curso = curso;
 	}
 	
-	public Status getStatus() {
+	public StatusCurso getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(Status status) {
+	public void setStatus(StatusCurso status) {
 		this.status = status;
 	}
 	
