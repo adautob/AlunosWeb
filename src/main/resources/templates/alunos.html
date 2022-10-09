@@ -2,10 +2,34 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+	crossorigin="anonymous">
+
 <title>Insert title here</title>
 </head>
 <body>
-<span>Listagem de Alunos</span>
-<p th:text="${lista}">Welcome to our grocery store!</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-th-each="aluno : ${lista}">
+      <th data-th-text="${aluno.id}" scope="row"></th>
+      <td data-th-text="${aluno.nome}"></td>
+      <td data-th-text="${aluno.email}"></td>
+      <td data-th-text="${aluno.telefone}"></td>
+    </tr>
+
+  </tbody>
+</table>
 </body>
 </html>

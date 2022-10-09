@@ -4,18 +4,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.csv.AlunosWeb.dao.AlunoDao;
+
 @Controller
 public class AlunoController {
 
 	@RequestMapping("alunos")
 	public String listaAlunos(ModelMap modelMap) {
-		//AlunoDao alunoDao = new AlunoDao();
-		modelMap.addAttribute("lista", "teste");
-		
-		
-
-	
-		
+		AlunoDao alunoDao = new AlunoDao();
+		modelMap.addAttribute("lista", alunoDao.SelecionarTodos());
+				
 		return "alunos";
 	}
 	
