@@ -9,9 +9,12 @@ public class AlunoController {
 
 	@RequestMapping("alunos")
 	public String listaAlunos(ModelMap modelMap) {
-		modelMap.put("id", 1);
-		modelMap.put("nome", "Adauto");
-		modelMap.put("email", "adauto@email.com");
+		//AlunoDao alunoDao = new AlunoDao();
+		modelMap.addAttribute("lista", "teste");
+		
+		
+
+	
 		
 		return "alunos";
 	}

@@ -1,7 +1,6 @@
 package com.csv.AlunosWeb.dao;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.csv.AlunosWeb.model.Aluno;
 import com.csv.AlunosWeb.model.Curso;
@@ -10,9 +9,9 @@ import com.csv.AlunosWeb.model.Matricula.StatusCurso;
 
 public class Banco {
 
-	public static List<Aluno> alunos = new ArrayList<Aluno>();
-	public static List<Curso> cursos = new ArrayList<Curso>();
-	public static List<Matricula> matriculas = new ArrayList<Matricula>();
+	public static ArrayList<Aluno> alunos = new ArrayList<Aluno>();
+	public static ArrayList<Curso> cursos = new ArrayList<Curso>();
+	public static ArrayList<Matricula> matriculas = new ArrayList<Matricula>();
 		
 	
 	public static void inicia() {
