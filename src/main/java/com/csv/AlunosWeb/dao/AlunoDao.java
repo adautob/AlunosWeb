@@ -12,7 +12,7 @@ public class AlunoDao {
 		
 	}
 	
-	public void AdicionarCliente(Aluno a) {
+	public void AdicionarAluno(Aluno a) {
 		
 		// código para incrementar o ID, pois este não será fornecido pelo usuário
 		int idMaior = 0;

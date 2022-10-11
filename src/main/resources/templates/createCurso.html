@@ -8,7 +8,7 @@
 	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="css/style.css">
-<title>Cadastro de Alunos</title>
+<title>Cadastro de Cursos</title>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -21,13 +21,13 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link" href="/alunos">Alunos</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/alunos">Alunos</a></li>
-					<li class="nav-item"><a class="nav-link" href="/cursos">Cursos</a>
-					</li>
+						aria-current="page" href="/cursos">Cursos</a></li>
 					<li class="nav-item"><a class="nav-link" href="/matriculas">Matrículas</a>
 					</li>
-				</ul>>
+				</ul>
+				>
 			</div>
 		</div>
 	</nav>
@@ -47,26 +47,19 @@
 		</div>
 	</nav>
 
-	<form method="POST" action="/alunos/create" th:object="${aluno}">
-		<input type="hidden" th:value="${aluno.id}" name="id" />
+	<form method="POST" action="/cursos/create" th:object="${curso}">
+		<input type="hidden" th:value="${curso.id}" name="id" />
 
 		<div class="mb-3">
-			<label for="nome" class="form-label">Nome</label> <input type="text"
-				class="form-control" name="nome" th:value="${aluno.nome}">
+			<label for="nome" class="form-label">Nome do Curso</label> <input type="text"
+				class="form-control" name="nomeCurso" th:value="${curso.nomeCurso}">
 
 		</div>
 		<div class="mb-3">
-			<label for="email" class="form-label">Email</label> <input
-				type="text" class="form-control" name="email"
-				th:value="${aluno.email}">
+			<label for="email" class="form-label">Carga Horária</label> <input
+				type="text" class="form-control" name="cargaHoraria"
+				th:value="${curso.cargaHoraria}">
 		</div>
-
-		<div class="mb-3">
-			<label for="telefone" class="form-label">Telefone</label> <input
-				type="text" class="form-control" name="telefone"
-				th:value="${aluno.telefone}">
-		</div>
-
 		<button type="submit" class="btn btn-primary">Cadastrar</button>
 	</form>
 </body>

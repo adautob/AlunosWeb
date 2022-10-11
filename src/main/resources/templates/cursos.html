@@ -9,7 +9,7 @@
 	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
 	crossorigin="anonymous">
 
-<title>Lista de Alunos</title>
+<title>Lista de Cursos</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -20,10 +20,10 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/alunos">Alunos</a>
+          <a class="nav-link" href="/alunos">Alunos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/cursos">Cursos</a>
+          <a class="nav-link active" aria-current="page" href="/cursos">Cursos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/matriculas">Matrículas</a>
@@ -38,8 +38,8 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/alunos/create">Novo Aluno</a></li>
-					<li class="nav-item"><a class="nav-link" href="/alunos">Listagem</a>
+						aria-current="page" href="/cursos/create">Novo Curso</a></li>
+					<li class="nav-item"><a class="nav-link" href="/cursos">Listagem</a>
 					</li>
 
 				</ul>
@@ -51,21 +51,19 @@
 		<thead>
 			<tr>
 				<th scope="col">#</th>
-				<th scope="col">Nome</th>
-				<th scope="col">Email</th>
-				<th scope="col">Telefone</th>
+				<th scope="col">Curso</th>
+				<th scope="col">Carga Horária</th>
 				<th scope="col"></th>
 				<th scope="col"></th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr data-th-each="aluno : ${lista}">
-				<th data-th-text="${aluno.id}" scope="row"></th>
-				<td data-th-text="${aluno.nome}"></td>
-				<td data-th-text="${aluno.email}"></td>
-				<td data-th-text="${aluno.telefone}"></td>
-				<td><a th:href="@{'/alunos/edit/'+${aluno.id}}">Editar</a></td>
-				<td><a th:href="@{'/alunos/delete/'+${aluno.id}}" >Apagar</a></td>
+			<tr data-th-each="curso : ${lista}">
+				<th data-th-text="${curso.id}" scope="row"></th>
+				<td data-th-text="${curso.nomeCurso}"></td>
+				<td data-th-text="${curso.cargaHoraria}"></td>
+				<td><a th:href="@{'/cursos/edit/'+${curso.id}}">Editar</a></td>
+				<td><a th:href="@{'/cursos/delete/'+${curso.id}}" >Apagar</a></td>
 			</tr>
 
 		</tbody>

@@ -2,7 +2,7 @@ package com.csv.AlunosWeb.model;
 
 public class Curso {
 
-	private int id;
+	private Integer id;
 	private String nomeCurso;
 	private String cargaHoraria;
 	
@@ -14,7 +14,7 @@ public class Curso {
 
 
 
-	public Curso(int id, String nomeCurso, String cargaHoraria) {
+	public Curso(Integer id, String nomeCurso, String cargaHoraria) {
 		super();
 		this.id = id;
 		this.nomeCurso = nomeCurso;
@@ -23,25 +23,25 @@ public class Curso {
 
 
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
 
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
 
 
-	public String getDescrição() {
+	public String getNomeCurso() {
 		return nomeCurso;
 	}
 
 
 
-	public void setDescrição(String nomeCurso) {
+	public void setNomeCurso(String nomeCurso) {
 		this.nomeCurso = nomeCurso;
 	}
 

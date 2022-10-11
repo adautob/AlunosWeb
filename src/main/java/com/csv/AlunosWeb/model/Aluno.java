@@ -2,7 +2,7 @@ package com.csv.AlunosWeb.model;
 
 public class Aluno {
 
-	private int id;
+	private Integer id;
 	private String nome;
 	private String email;
 	private String telefone;
@@ -14,7 +14,7 @@ public class Aluno {
 	}
 
 
-	public Aluno(int id, String nome, String email, String telefone) {
+	public Aluno(Integer id, String nome, String email, String telefone) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -22,10 +22,10 @@ public class Aluno {
 		this.telefone = telefone;
 	}
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getNome() {
