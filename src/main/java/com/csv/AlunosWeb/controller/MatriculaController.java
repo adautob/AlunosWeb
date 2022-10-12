@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.csv.AlunosWeb.dao.AlunoDao;
 import com.csv.AlunosWeb.dao.CursoDao;
 import com.csv.AlunosWeb.dao.MatriculaDao;
+import com.csv.AlunosWeb.dto.MatriculaDto;
 import com.csv.AlunosWeb.model.Aluno;
 import com.csv.AlunosWeb.model.Curso;
 import com.csv.AlunosWeb.model.Matricula;
@@ -45,11 +46,15 @@ public class MatriculaController {
 	}
 
 	@PostMapping("/matriculas/create")
-	public String salvarMatricula(Matricula matricula) {
+	public String salvarMatricula(MatriculaDto matriculaDto) {
+		
+		System.out.println(matriculaDto.getIdAluno());
+/*		System.out.println(matricula.getStatus());
 		MatriculaDao matriculaDao = new MatriculaDao();
 		if (matricula.getId() != null) {	
 			matriculaDao.AtualizarMatricula(matricula.getId(), matricula);
 		} else {
+
 			Matricula m = new Matricula();
 			m.setId(0);
 			m.setAluno(matricula.getAluno());
@@ -58,7 +63,7 @@ public class MatriculaController {
 			matriculaDao.AdicionarMatricula(m);
 
 		}
-
+*/
 		return "redirect:/matriculas";
 	}
 
@@ -71,6 +76,14 @@ public class MatriculaController {
 		MatriculaDao matriculaDao = new MatriculaDao();
 		Matricula m = matriculaDao.getMatricula(id);
 		Matricula matricula = new Matricula();
+		AlunoDao alunoDao = new AlunoDao();
+		CursoDao cursoDao = new CursoDao();
+		List<Aluno> listAluno = alunoDao.SelecionarTodos();
+		List<Curso> listCurso = cursoDao.SelecionarTodos();
+		List<StatusCurso> listStatus = Arrays.asList(StatusCurso.values());		
+		mv.addObject("listAluno", listAluno);
+		mv.addObject("listCurso", listCurso);
+		mv.addObject("listStatus", listStatus);		
 		matricula.setId(m.getId());
 		matricula.setAluno(m.getAluno());
 		matricula.setCurso(m.getCurso());

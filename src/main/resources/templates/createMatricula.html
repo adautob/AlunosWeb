@@ -7,7 +7,6 @@
 	rel="stylesheet"
 	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/style.css">
 <title>Matrículas</title>
 </head>
 <body>
@@ -47,25 +46,28 @@
 	</nav>
 
 	<form method="POST" action="/matriculas/create"
-		th:object="${matricula}">
-		<input type="hidden" th:value="${matricula.id}" name="id" />
+		th:object="${matricula}"> <!-- objeto que entra -->
+		<input type="hidden" th:value="${matricula.id}" name="id" /> <!-- entrou matricula.id -->
 
 		<div class="mb-3">
 			<label for="aluno" class="form-label">Aluno</label>
-			<select
-				class="form-control" id="dropDownList" name="aluno">
+			<!-- propriedade name="" campos que serão preenchidos no retorno para o controller -->
+			<select			
+				class="form-control" id="alunos" name="idAluno"> 
 				<option value="">Selecione</option>
-				<option th:each="aluno : ${listAluno}" th:value="${aluno}"
+				<!-- th:value ==== valor que vai para o campo na proprieade name="" -->
+				<option th:each="aluno : ${listAluno}" th:value="${aluno.getId}" 
 					th:text="${aluno.getNome}"></option>
 			</select>
 
 		</div>
+
 		<div class="mb-3">
 			<label for="curso" class="form-label">Curso</label>
 			<select
-				class="form-control" id="dropDownList" name="curso">
+				class="form-control" id="dropDownList" name="idCurso">
 				<option value="">Selecione</option>
-				<option th:each="curso : ${listCurso}" th:value="${curso}"
+				<option th:each="curso : ${listCurso}" th:value="${curso.getId}"
 					th:text="${curso.getNomeCurso}"></option>
 			</select>
 		</div>
