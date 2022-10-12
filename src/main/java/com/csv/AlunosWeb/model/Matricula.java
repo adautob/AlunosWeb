@@ -2,21 +2,21 @@ package com.csv.AlunosWeb.model;
 
 public class Matricula {
 
-	private int id;
+	private Integer id;
 	private Aluno aluno;
 	private Curso curso;
 	public enum StatusCurso {
 		EM_ANDAMENTO,
 		CONCLUIDO
 	}
-	StatusCurso status;
+	private StatusCurso status;
 	
 	
 	public Matricula() {
 		super();
 	}
 
-	public Matricula(int id, Aluno aluno, Curso curso, StatusCurso status) {
+	public Matricula(Integer id, Aluno aluno, Curso curso, StatusCurso status) {
 		super();
 		this.id = id;
 		this.aluno = aluno;
@@ -24,11 +24,11 @@ public class Matricula {
 		this.status = status;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
