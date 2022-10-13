@@ -7,7 +7,8 @@ public class Matricula {
 	private Curso curso;
 	public enum StatusCurso {
 		EM_ANDAMENTO,
-		CONCLUIDO
+		CONCLUIDO,
+		CANCELADO
 	}
 	private StatusCurso status;
 	

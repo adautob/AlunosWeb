@@ -7,7 +7,6 @@
 	rel="stylesheet"
 	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="css/style.css">
 <title>Cadastro de Cursos</title>
 </head>
 <body>
@@ -46,21 +45,23 @@
 			</div>
 		</div>
 	</nav>
+	<div class="container">
+		<form method="POST" action="/cursos/create" th:object="${curso}">
+			<input type="hidden" th:value="${curso.id}" name="id" />
 
-	<form method="POST" action="/cursos/create" th:object="${curso}">
-		<input type="hidden" th:value="${curso.id}" name="id" />
+			<div class="mb-3">
+				<label for="nome" class="form-label">Nome do Curso</label> <input
+					type="text" class="form-control" name="nomeCurso"
+					th:value="${curso.nomeCurso}">
 
-		<div class="mb-3">
-			<label for="nome" class="form-label">Nome do Curso</label> <input type="text"
-				class="form-control" name="nomeCurso" th:value="${curso.nomeCurso}">
-
-		</div>
-		<div class="mb-3">
-			<label for="email" class="form-label">Carga Horária</label> <input
-				type="text" class="form-control" name="cargaHoraria"
-				th:value="${curso.cargaHoraria}">
-		</div>
-		<button type="submit" class="btn btn-primary">Cadastrar</button>
-	</form>
+			</div>
+			<div class="mb-3">
+				<label for="email" class="form-label">Carga Horária</label> <input
+					type="text" class="form-control" name="cargaHoraria"
+					th:value="${curso.cargaHoraria}">
+			</div>
+			<button type="submit" class="btn btn-primary">Salvar</button>
+		</form>
+	</div>
 </body>
 </html>

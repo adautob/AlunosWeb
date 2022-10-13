@@ -47,7 +47,7 @@
 			</div>
 		</div>
 	</nav>
-	<table class="table table-hover">
+	<table class="table align-middle table-hover">
 		<thead>
 			<tr>
 				<th scope="col">#</th>
@@ -64,8 +64,8 @@
 				<td data-th-text="${matricula.aluno.nome}"></td>
 				<td data-th-text="${matricula.curso.nomeCurso}"></td>
 				<td data-th-text="${matricula.status}"></td>
-				<td><a th:href="@{'/matriculas/edit/'+${matricula.id}}">Editar</a></td>
-				<td><a th:href="@{'/matriculas/delete/'+${matricula.id}}" >Apagar</a></td>
+				<td><a class="btn btn-primary btn-sm" th:href="@{'/matriculas/edit/concluir/'+${matricula.id}}">Concluir</a></td>
+				<td><a class="btn btn-danger btn-sm" th:href="@{'/matriculas/edit/cancelar/'+${matricula.id}}">Cancelar</a></td>
 			</tr>
 
 		</tbody>

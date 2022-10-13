@@ -1,6 +1,5 @@
 package com.csv.AlunosWeb.controller;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -37,60 +36,55 @@ public class MatriculaController {
 		CursoDao cursoDao = new CursoDao();
 		List<Aluno> listAluno = alunoDao.SelecionarTodos();
 		List<Curso> listCurso = cursoDao.SelecionarTodos();
-		List<StatusCurso> listStatus = Arrays.asList(StatusCurso.values());
 		mv.addObject("matricula", new Matricula());
 		mv.addObject("listAluno", listAluno);
 		mv.addObject("listCurso", listCurso);
-		mv.addObject("listStatus", listStatus);
 		return mv;
 	}
 
 	@PostMapping("/matriculas/create")
 	public String salvarMatricula(MatriculaDto matriculaDto) {
-		
-		System.out.println(matriculaDto.getIdAluno());
-/*		System.out.println(matricula.getStatus());
+		Aluno aluno = new AlunoDao().getAluno(matriculaDto.getIdAluno());
+		Curso curso = new CursoDao().getCurso(matriculaDto.getIdCurso()); 
+		Matricula salvarMatricula = new Matricula();
+		salvarMatricula.setAluno(aluno);
+		salvarMatricula.setCurso(curso);
+		salvarMatricula.setStatus(StatusCurso.EM_ANDAMENTO);
+
 		MatriculaDao matriculaDao = new MatriculaDao();
-		if (matricula.getId() != null) {	
-			matriculaDao.AtualizarMatricula(matricula.getId(), matricula);
-		} else {
-
-			Matricula m = new Matricula();
-			m.setId(0);
-			m.setAluno(matricula.getAluno());
-			m.setCurso(matricula.getCurso());
-			m.setStatus(matricula.getStatus());
-			matriculaDao.AdicionarMatricula(m);
-
+		if (matriculaDto.getId() != null) {	
+			matriculaDao.AtualizarMatricula(salvarMatricula.getId(), salvarMatricula);
+		} else {			
+			salvarMatricula.setId(0);
+			matriculaDao.AdicionarMatricula(salvarMatricula);
 		}
-*/
 		return "redirect:/matriculas";
 	}
 
 	
 	
-	@GetMapping("/matriculas/edit/{id}")
-	public ModelAndView edit(@PathVariable("id") int id) {
-		ModelAndView mv = new ModelAndView("createMatricula");
-
+	@GetMapping("/matriculas/edit/concluir/{id}")
+	public String editConcluir(@PathVariable("id") int id) {
+		
 		MatriculaDao matriculaDao = new MatriculaDao();
-		Matricula m = matriculaDao.getMatricula(id);
-		Matricula matricula = new Matricula();
-		AlunoDao alunoDao = new AlunoDao();
-		CursoDao cursoDao = new CursoDao();
-		List<Aluno> listAluno = alunoDao.SelecionarTodos();
-		List<Curso> listCurso = cursoDao.SelecionarTodos();
-		List<StatusCurso> listStatus = Arrays.asList(StatusCurso.values());		
-		mv.addObject("listAluno", listAluno);
-		mv.addObject("listCurso", listCurso);
-		mv.addObject("listStatus", listStatus);		
-		matricula.setId(m.getId());
-		matricula.setAluno(m.getAluno());
-		matricula.setCurso(m.getCurso());
-		matricula.setStatus(m.getStatus());
+		Matricula matricula = matriculaDao.getMatricula(id);
+		matricula.setStatus(StatusCurso.CONCLUIDO);
 		matriculaDao.AtualizarMatricula(matricula.getId(), matricula);
-		mv.addObject("matricula", m);
-		return mv;
+
+		return "redirect:/matriculas";
+		
 	}
+	
+	@GetMapping("/matriculas/edit/cancelar/{id}")
+	public String editCancelar(@PathVariable("id") int id) {
+		
+		MatriculaDao matriculaDao = new MatriculaDao();
+		Matricula matricula = matriculaDao.getMatricula(id);
+		matricula.setStatus(StatusCurso.CANCELADO);
+		matriculaDao.AtualizarMatricula(matricula.getId(), matricula);
+
+		return "redirect:/matriculas";
+		
+	}	
 
 }

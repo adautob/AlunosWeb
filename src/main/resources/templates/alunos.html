@@ -12,63 +12,65 @@
 <title>Lista de Alunos</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/alunos">Alunos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/cursos">Cursos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/matriculas">Matrículas</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarText"
+				aria-controls="navbarText" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarText">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/alunos">Alunos</a></li>
+					<li class="nav-item"><a class="nav-link" href="/cursos">Cursos</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/matriculas">Matrículas</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<nav class="navbar navbar-expand-lg bg-light">
 		<div class="container-fluid">
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link" href="/alunos/create">Novo
+							Aluno</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/alunos/create">Novo Aluno</a></li>
-					<li class="nav-item"><a class="nav-link" href="/alunos">Listagem</a>
-					</li>
+						aria-current="page" href="/alunos">Listagem</a></li>
 
 				</ul>
 
 			</div>
 		</div>
 	</nav>
-	<table class="table table-hover">
-		<thead>
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">Nome</th>
-				<th scope="col">Email</th>
-				<th scope="col">Telefone</th>
-				<th scope="col"></th>
-				<th scope="col"></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr data-th-each="aluno : ${lista}">
-				<th data-th-text="${aluno.id}" scope="row"></th>
-				<td data-th-text="${aluno.nome}"></td>
-				<td data-th-text="${aluno.email}"></td>
-				<td data-th-text="${aluno.telefone}"></td>
-				<td><a th:href="@{'/alunos/edit/'+${aluno.id}}">Editar</a></td>
-				<td><a th:href="@{'/alunos/delete/'+${aluno.id}}" >Apagar</a></td>
-			</tr>
+	<div class="table-responsive">
+		<table class="table align-middle table-hover">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Email</th>
+					<th scope="col">Telefone</th>
+					<th scope="col"></th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-th-each="aluno : ${lista}">
+					<th data-th-text="${aluno.id}" scope="row"></th>
+					<td data-th-text="${aluno.nome}"></td>
+					<td data-th-text="${aluno.email}"></td>
+					<td data-th-text="${aluno.telefone}"></td>
+					<td><a class="btn btn-primary btn-sm"
+						th:href="@{'/alunos/edit/'+${aluno.id}}">Editar</a></td>
+				</tr>
 
-		</tbody>
-	</table>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
