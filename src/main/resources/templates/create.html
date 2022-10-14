@@ -25,10 +25,10 @@
 			<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/alunos">Alunos</a></li>
-					<li class="nav-item"><a class="nav-link" href="/cursos">Cursos</a>
+						aria-current="page" href="/AlunosWeb/alunos">Alunos</a></li>
+					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/cursos">Cursos</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="/matriculas">Matrículas</a>
+					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/matriculas">Matrículas</a>
 					</li>
 				</ul>
 				>
@@ -41,8 +41,8 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/alunos/create">Novo Aluno</a></li>
-					<li class="nav-item"><a class="nav-link" href="/alunos">Listagem</a>
+						aria-current="page" href="/AlunosWeb/alunos/create">Novo Aluno</a></li>
+					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/alunos">Listagem</a>
 					</li>
 
 				</ul>
@@ -51,7 +51,7 @@
 		</div>
 	</nav>
 	<div class="container">
-		<form method="POST" action="/alunos/create" th:object="${aluno}">
+		<form method="POST" action="/AlunosWeb/alunos/create" th:object="${aluno}">
 			<input type="hidden" th:value="${aluno.id}" name="id" />
 
 			<div class="ml-3 col-xs-4">

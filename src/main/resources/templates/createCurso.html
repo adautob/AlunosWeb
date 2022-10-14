@@ -29,10 +29,10 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link" href="/alunos">Alunos</a></li>
+					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/alunos">Alunos</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/cursos">Cursos</a></li>
-					<li class="nav-item"><a class="nav-link" href="/matriculas">Matrículas</a>
+						aria-current="page" href="/AlunosWeb/cursos">Cursos</a></li>
+					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/matriculas">Matrículas</a>
 					</li>
 				</ul>
 				>
@@ -45,8 +45,8 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/alunos/create">Cadastro</a></li>
-					<li class="nav-item"><a class="nav-link" href="/alunos">Listagem</a>
+						aria-current="page" href="/AlunosWeb/alunos/create">Cadastro</a></li>
+					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/alunos">Listagem</a>
 					</li>
 
 				</ul>
@@ -55,7 +55,7 @@
 		</div>
 	</nav>
 	<div class="container">
-		<form method="POST" action="/cursos/create" th:object="${curso}">
+		<form method="POST" action="/AlunosWeb/cursos/create" th:object="${curso}">
 			<input type="hidden" th:value="${curso.id}" name="id" />
 
 			<div class="mb-3">
