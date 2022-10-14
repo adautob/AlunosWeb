@@ -9,9 +9,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.csv.AlunosWeb.dao.AlunoDao;
 import com.csv.AlunosWeb.model.Aluno;
+import com.csv.AlunosWeb.service.AlunoService;
 
 @Controller
 public class AlunoController {
+	
+	AlunoService alunoService;
+	
+
+	public AlunoController(AlunoService alunoService) {
+		super();
+		this.alunoService = alunoService;
+	}
 
 	@GetMapping("/alunos")
 	public String listaAlunos(ModelMap modelMap) {
@@ -30,38 +39,13 @@ public class AlunoController {
 
 	@PostMapping("/alunos/create")
 	public String salvarAluno(Aluno aluno) {
-		AlunoDao alunoDao = new AlunoDao();
-		if (aluno.getId() != null) {	
-			alunoDao.AtualizarAluno(aluno.getId(), aluno);
-		} else {
-			Aluno a = new Aluno();
-			a.setId(0);
-			a.setNome(aluno.getNome());
-			a.setEmail(aluno.getEmail());
-			a.setTelefone(aluno.getTelefone());
-			alunoDao.AdicionarAluno(a);
-
-		}
-
+		alunoService.salvar(aluno);
 		return "redirect:/alunos";
-	}
-
-	
+	}	
 	
 	@GetMapping("/alunos/edit/{id}")
 	public ModelAndView edit(@PathVariable("id") int id) {
-		ModelAndView mv = new ModelAndView("create");
-
-		AlunoDao alunoDao = new AlunoDao();
-		Aluno a = alunoDao.getAluno(id);
-		Aluno aluno = new Aluno();
-		aluno.setId(a.getId());
-		aluno.setNome(a.getNome());
-		aluno.setEmail(a.getEmail());
-		aluno.setTelefone(a.getTelefone());
-		alunoDao.AtualizarAluno(aluno.getId(), aluno);
-		mv.addObject("aluno", a);
-		return mv;
+		return alunoService.editar(id);
 	}
 
 }

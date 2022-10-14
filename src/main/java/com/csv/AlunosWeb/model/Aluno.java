@@ -1,5 +1,8 @@
 package com.csv.AlunosWeb.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Aluno {
 
 	private Integer id;
