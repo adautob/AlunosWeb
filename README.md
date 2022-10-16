@@ -7,8 +7,7 @@ Objetivos: Utilizar das tecnologias mais modernas para construção de aplicaç�
 
 Link da versão Demo: https://bit.ly/alunosweb
 
-
-![tela_alunos_web](https://user-images.githubusercontent.com/95452249/195755748-464ec7ef-7d61-45b3-8f1f-0e26abfaeda2.png)
+![tela_matricula](https://user-images.githubusercontent.com/95452249/196016450-08ba7562-bf46-418d-8192-61132ab00faa.png)
 
 Aprendizado:
 
