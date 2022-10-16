@@ -19,9 +19,9 @@ public class Banco {
 		Aluno a2 = new Aluno(2, "Joao", "joao@email.com", "1223455677");
 		Curso c1 = new Curso(1, "Java", "40");
 		Curso c2 = new Curso(2, "Html", "30");
-		Matricula m1 = new Matricula(1, a1, c1, StatusCurso.EM_ANDAMENTO);
-		Matricula m2 = new Matricula(2, a1, c2, StatusCurso.EM_ANDAMENTO);
-		Matricula m3 = new Matricula(3, a2, c1, StatusCurso.EM_ANDAMENTO);
+		Matricula m1 = new Matricula(1, a1, c1, StatusCurso.Iniciado);
+		Matricula m2 = new Matricula(2, a1, c2, StatusCurso.Iniciado);
+		Matricula m3 = new Matricula(3, a2, c1, StatusCurso.Iniciado);
 		
 		alunos.add(a1);
 		alunos.add(a2);

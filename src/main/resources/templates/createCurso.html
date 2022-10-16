@@ -29,11 +29,12 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/alunos">Alunos</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/AlunosWeb/alunos">Alunos</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="/AlunosWeb/cursos">Cursos</a></li>
-					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/matriculas">Matrículas</a>
-					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="/AlunosWeb/matriculas">Matrículas</a></li>
 				</ul>
 				>
 			</div>
@@ -45,9 +46,9 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/AlunosWeb/alunos/create">Cadastro</a></li>
-					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/alunos">Listagem</a>
-					</li>
+						aria-current="page" href="/AlunosWeb/cursos/create">Cadastro</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/AlunosWeb/cursos">Listagem</a></li>
 
 				</ul>
 
@@ -55,22 +56,31 @@
 		</div>
 	</nav>
 	<div class="container">
-		<form method="POST" action="/AlunosWeb/cursos/create" th:object="${curso}">
-			<input type="hidden" th:value="${curso.id}" name="id" />
+		<div class="row">
+			<div
+				class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h3 class="text-center mt-3">Novo Curso</h3>
+				<div class="card-body">
+					<form method="POST" action="/AlunosWeb/cursos/create"
+						th:object="${curso}">
+						<input type="hidden" th:value="${curso.id}" name="id" />
 
-			<div class="mb-3">
-				<label for="nome" class="form-label">Nome do Curso</label> <input
-					type="text" class="form-control" name="nomeCurso"
-					th:value="${curso.nomeCurso}">
+						<div class="mb-3">
+							<label for="nome" class="form-label">Nome do Curso</label> <input
+								type="text" class="form-control" name="nomeCurso"
+								th:value="${curso.nomeCurso}">
 
+						</div>
+						<div class="mb-3">
+							<label for="email" class="form-label">Carga Horária</label> <input
+								type="text" class="form-control" name="cargaHoraria"
+								th:value="${curso.cargaHoraria}">
+						</div>
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</form>
+				</div>
 			</div>
-			<div class="mb-3">
-				<label for="email" class="form-label">Carga Horária</label> <input
-					type="text" class="form-control" name="cargaHoraria"
-					th:value="${curso.cargaHoraria}">
-			</div>
-			<button type="submit" class="btn btn-primary">Salvar</button>
-		</form>
+		</div>
 	</div>
 </body>
 </html>

@@ -31,12 +31,12 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/alunos">Alunos</a>
-					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="/AlunosWeb/alunos">Alunos</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="/AlunosWeb/cursos">Cursos</a></li>
-					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/matriculas">Matrículas</a>
-					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="/AlunosWeb/matriculas">Matrículas</a></li>
 				</ul>
 			</div>
 		</div>
@@ -46,8 +46,8 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/cursos/create">Novo
-							Curso</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/AlunosWeb/cursos/create">Novo Curso</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="/AlunosWeb/cursos">Listagem</a></li>
 
@@ -56,26 +56,28 @@
 			</div>
 		</div>
 	</nav>
-	<table class="table align-middle table-hover">
-		<thead>
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">Curso</th>
-				<th scope="col">Carga Horária</th>
-				<th scope="col"></th>
-				<th scope="col"></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr data-th-each="curso : ${lista}">
-				<th data-th-text="${curso.id}" scope="row"></th>
-				<td data-th-text="${curso.nomeCurso}"></td>
-				<td data-th-text="${curso.cargaHoraria}"></td>
-				<td><a class="btn btn-primary btn-sm"
-					th:href="@{'/cursos/edit/'+${curso.id}}">Editar</a></td>
-			</tr>
+	<div class="container">
+		<table
+			class="table align-middle table-hover table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Curso</th>
+					<th scope="col">Carga Horária</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-th-each="curso : ${lista}">
+					<th class="col-1" data-th-text="${curso.id}" scope="row"></th>
+					<td class="col-3"data-th-text="${curso.nomeCurso}"></td>
+					<td class="col-2"data-th-text="${curso.cargaHoraria}"></td>
+					<td class="col-1 text-center"><a class="btn btn-primary btn-sm"
+						th:href="@{'/cursos/edit/'+${curso.id}}">Editar</a></td>
+				</tr>
 
-		</tbody>
-	</table>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>

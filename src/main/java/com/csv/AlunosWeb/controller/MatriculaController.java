@@ -49,7 +49,7 @@ public class MatriculaController {
 		Matricula salvarMatricula = new Matricula();
 		salvarMatricula.setAluno(aluno);
 		salvarMatricula.setCurso(curso);
-		salvarMatricula.setStatus(StatusCurso.EM_ANDAMENTO);
+		salvarMatricula.setStatus(StatusCurso.Iniciado);
 
 		MatriculaDao matriculaDao = new MatriculaDao();
 		if (matriculaDto.getId() != null) {	
@@ -68,7 +68,7 @@ public class MatriculaController {
 		
 		MatriculaDao matriculaDao = new MatriculaDao();
 		Matricula matricula = matriculaDao.getMatricula(id);
-		matricula.setStatus(StatusCurso.CONCLUIDO);
+		matricula.setStatus(StatusCurso.Concluido);
 		matriculaDao.AtualizarMatricula(matricula.getId(), matricula);
 
 		return "redirect:/matriculas";
@@ -80,7 +80,7 @@ public class MatriculaController {
 		
 		MatriculaDao matriculaDao = new MatriculaDao();
 		Matricula matricula = matriculaDao.getMatricula(id);
-		matricula.setStatus(StatusCurso.CANCELADO);
+		matricula.setStatus(StatusCurso.Cancelado);
 		matriculaDao.AtualizarMatricula(matricula.getId(), matricula);
 
 		return "redirect:/matriculas";

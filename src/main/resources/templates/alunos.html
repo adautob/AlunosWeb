@@ -33,10 +33,10 @@
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="/AlunosWeb/alunos">Alunos</a></li>
-					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/cursos">Cursos</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/matriculas">Matrículas</a>
-					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="/AlunosWeb/cursos">Cursos</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/AlunosWeb/matriculas">Matrículas</a></li>
 				</ul>
 			</div>
 		</div>
@@ -46,8 +46,8 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-					<li class="nav-item"><a class="nav-link" href="/AlunosWeb/alunos/create">Novo
-							Aluno</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/AlunosWeb/alunos/create">Novo Aluno</a></li>
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="/AlunosWeb/alunos">Listagem</a></li>
 
@@ -56,25 +56,24 @@
 			</div>
 		</div>
 	</nav>
-	<div class="table-responsive">
-		<table class="table align-middle table-hover">
-			<thead>
+	<div class="container">
+		<table class="table align-middle table-hover table-striped table-bordered">
+			<thead class = "table-dark">
 				<tr>
-					<th scope="col">#</th>
+					<th scope="col">Id</th>
 					<th scope="col">Nome</th>
 					<th scope="col">Email</th>
 					<th scope="col">Telefone</th>
-					<th scope="col"></th>
 					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr data-th-each="aluno : ${lista}">
-					<th data-th-text="${aluno.id}" scope="row"></th>
-					<td data-th-text="${aluno.nome}"></td>
-					<td data-th-text="${aluno.email}"></td>
-					<td data-th-text="${aluno.telefone}"></td>
-					<td><a class="btn btn-primary btn-sm"
+					<th class="col-1" data-th-text="${aluno.id}" scope="row"></th>
+					<td class="col-4" data-th-text="${aluno.nome}"></td>
+					<td class="col-5" data-th-text="${aluno.email}"></td>
+					<td class="col-2" data-th-text="${aluno.telefone}"></td>
+					<td class="col-1 text-center"><a class="btn btn-primary btn-sm"
 						th:href="@{'/alunos/edit/'+${aluno.id}}">Editar</a></td>
 				</tr>
 

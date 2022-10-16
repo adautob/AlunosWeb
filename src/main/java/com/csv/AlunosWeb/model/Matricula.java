@@ -6,9 +6,9 @@ public class Matricula {
 	private Aluno aluno;
 	private Curso curso;
 	public enum StatusCurso {
-		EM_ANDAMENTO,
-		CONCLUIDO,
-		CANCELADO
+		Iniciado,
+		Concluido,
+		Cancelado
 	}
 	private StatusCurso status;
 	

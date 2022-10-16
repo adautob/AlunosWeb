@@ -56,30 +56,33 @@
 			</div>
 		</div>
 	</nav>
-	<table class="table align-middle table-hover">
-		<thead>
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">Aluno</th>
-				<th scope="col">Curso</th>
-				<th scope="col">Status</th>
-				<th scope="col"></th>
-				<th scope="col"></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr data-th-each="matricula : ${lista}">
-				<th data-th-text="${matricula.id}" scope="row"></th>
-				<td data-th-text="${matricula.aluno.nome}"></td>
-				<td data-th-text="${matricula.curso.nomeCurso}"></td>
-				<td data-th-text="${matricula.status}"></td>
-				<td><a class="btn btn-outline-primary btn-sm"
-					th:href="@{'/matriculas/edit/concluir/'+${matricula.id}}">Concluir</a>
-					<a class="btn btn-outline-secondary btn-sm"
-					th:href="@{'/matriculas/edit/cancelar/'+${matricula.id}}">Cancelar</a></td>
-			</tr>
+	<div class="container">
+		<table
+			class="table align-middle table-hover table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Aluno</th>
+					<th scope="col">Curso</th>
+					<th scope="col">Status</th>
+					<th scope="col"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-th-each="matricula : ${lista}">
+					<th class="col-1" data-th-text="${matricula.id}" scope="row"></th>
+					<td class="col-3" data-th-text="${matricula.aluno.nome}"></td>
+					<td class="col-3" data-th-text="${matricula.curso.nomeCurso}"></td>
+					<td class="col-2" data-th-text="${matricula.status}"></td>
+					<td class="col-2 text-center"><a
+						class="btn btn-primary btn-sm"
+						th:href="@{'/matriculas/edit/concluir/'+${matricula.id}}">Concluir</a>
+						<a class="btn btn-secondary btn-sm"
+						th:href="@{'/matriculas/edit/cancelar/'+${matricula.id}}">Cancelar</a></td>
+				</tr>
 
-		</tbody>
-	</table>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
