@@ -74,12 +74,20 @@
 
 						<div class="mb-3 col-xs-4">
 							<label for="telefone" class="form-label">Telefone</label> <input
-								type="text" class="form-control" name="telefone"
+								type="text" id="fone" class="form-control" name="telefone"
 								th:value="${aluno.telefone}">
 						</div>
 						<button type="submit" class="btn btn-primary">Salvar</button>
 
 					</form>
+					<script src="https://unpkg.com/imask"></script>
+					<script>
+						var element = document.getElementById('fone');
+						var maskOptions = {
+							mask : '(00) 00000-0000'
+						};
+						var mask = IMask(element, maskOptions);
+					</script>
 				</div>
 			</div>
 		</div>
