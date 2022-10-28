@@ -1,10 +1,12 @@
 package com.csv.AlunosWeb.dao;
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Component;
+
 import com.csv.AlunosWeb.model.Curso;
 
 
-
+@Component
 public class CursoDao {
 	
 	
