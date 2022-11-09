@@ -11,7 +11,7 @@ import com.csv.AlunosWeb.dao.AlunoDao;
 import com.csv.AlunosWeb.model.Aluno;
 import com.csv.AlunosWeb.service.AlunoService;
 
-@Controller
+@Controller()
 public class AlunoController {
 	
 	AlunoService alunoService;
@@ -22,7 +22,7 @@ public class AlunoController {
 		this.alunoService = alunoService;
 	}
 
-	@GetMapping("/alunos")
+	@GetMapping("/aluno")
 	public String listaAlunos(ModelMap modelMap) {
 		AlunoDao alunoDao = new AlunoDao();
 		modelMap.addAttribute("lista", alunoDao.SelecionarTodos());
@@ -30,20 +30,20 @@ public class AlunoController {
 		return "alunos";
 	}
 
-	@GetMapping("/alunos/create")
+	@GetMapping("/aluno/create")
 	public ModelAndView novoAluno() {
 		ModelAndView mv = new ModelAndView("create");
 		mv.addObject("aluno", new Aluno());
 		return mv;
 	}
 
-	@PostMapping("/alunos/create")
+	@PostMapping("/aluno/create")
 	public String salvarAluno(Aluno aluno) {
 		alunoService.salvar(aluno);
-		return "redirect:/alunos";
+		return "redirect:/aluno";
 	}	
 	
-	@GetMapping("/alunos/edit/{id}")
+	@GetMapping("/aluno/edit/{id}")
 	public ModelAndView edit(@PathVariable("id") int id) {
 		return alunoService.editar(id);
 	}

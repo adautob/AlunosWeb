@@ -3,9 +3,9 @@ package com.csv.AlunosWeb.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
+@Controller("/")
 public class HomeController {	
-	@GetMapping("home")
+	@GetMapping()
 	public String index() {
 		return "index";
 	}
