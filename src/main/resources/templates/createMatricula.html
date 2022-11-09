@@ -30,11 +30,11 @@
 			<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link"
-						href="/AlunosWeb/alunos">Alunos</a></li>
+						href="/aluno">Alunos</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="/AlunosWeb/cursos">Cursos</a></li>
+						href="/curso">Cursos</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/AlunosWeb/matriculas">Matrículas</a></li>
+						aria-current="page" href="/matricula">Matrículas</a></li>
 				</ul>
 				>
 			</div>
@@ -46,10 +46,10 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/AlunosWeb/matriculas/create">Nova
+						aria-current="page" href="/matricula/create">Nova
 							Matrícula</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="/AlunosWeb/matriculas">Listagem</a></li>
+						href="/matricula">Listagem</a></li>
 
 				</ul>
 
@@ -62,7 +62,7 @@
 				class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
 				<h3 class="text-center mt-3">Nova Matrícula</h3>
 				<div class="card-body">
-					<form method="POST" action="/AlunosWeb/matriculas/create"
+					<form method="POST" action="/matricula/create"
 						th:object="${matricula}">
 						<!-- objeto que entra -->
 						<input type="hidden" th:value="${matricula.id}" name="id" />

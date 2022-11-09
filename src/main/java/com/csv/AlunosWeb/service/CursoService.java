@@ -16,7 +16,7 @@ public class CursoService {
 	Curso curso;
 	
 	public ModelAndView editar(Integer id) {
-		ModelAndView mv = new ModelAndView("create");
+		ModelAndView mv = new ModelAndView("createCurso");
 
 		curso = cursoDao.getCurso(id);
 		mv.addObject("curso", curso);

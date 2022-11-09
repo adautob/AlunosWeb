@@ -21,7 +21,7 @@ import com.csv.AlunosWeb.model.Matricula.StatusCurso;
 @Controller
 public class MatriculaController {
 
-	@GetMapping("/matriculas")
+	@GetMapping("/matricula")
 	public String listaMatriculas(ModelMap modelMap) {
 		MatriculaDao matriculaDao = new MatriculaDao();
 		modelMap.addAttribute("lista", matriculaDao.SelecionarTodos());
@@ -29,7 +29,7 @@ public class MatriculaController {
 		return "matriculas";
 	}
 
-	@GetMapping("/matriculas/create")
+	@GetMapping("/matricula/create")
 	public ModelAndView novaMatricula() {
 		ModelAndView mv = new ModelAndView("createMatricula");
 		AlunoDao alunoDao = new AlunoDao();
@@ -42,7 +42,7 @@ public class MatriculaController {
 		return mv;
 	}
 
-	@PostMapping("/matriculas/create")
+	@PostMapping("/matricula/create")
 	public String salvarMatricula(MatriculaDto matriculaDto) {
 		Aluno aluno = new AlunoDao().getAluno(matriculaDto.getIdAluno());
 		Curso curso = new CursoDao().getCurso(matriculaDto.getIdCurso()); 
@@ -58,12 +58,12 @@ public class MatriculaController {
 			salvarMatricula.setId(0);
 			matriculaDao.AdicionarMatricula(salvarMatricula);
 		}
-		return "redirect:/matriculas";
+		return "redirect:/matricula";
 	}
 
 	
 	
-	@GetMapping("/matriculas/edit/concluir/{id}")
+	@GetMapping("/matricula/edit/concluir/{id}")
 	public String editConcluir(@PathVariable("id") int id) {
 		
 		MatriculaDao matriculaDao = new MatriculaDao();
@@ -71,11 +71,11 @@ public class MatriculaController {
 		matricula.setStatus(StatusCurso.Concluido);
 		matriculaDao.AtualizarMatricula(matricula.getId(), matricula);
 
-		return "redirect:/matriculas";
+		return "redirect:/matricula";
 		
 	}
 	
-	@GetMapping("/matriculas/edit/cancelar/{id}")
+	@GetMapping("/matricula/edit/cancelar/{id}")
 	public String editCancelar(@PathVariable("id") int id) {
 		
 		MatriculaDao matriculaDao = new MatriculaDao();
@@ -83,7 +83,7 @@ public class MatriculaController {
 		matricula.setStatus(StatusCurso.Cancelado);
 		matriculaDao.AtualizarMatricula(matricula.getId(), matricula);
 
-		return "redirect:/matriculas";
+		return "redirect:/matricula";
 		
 	}	
 

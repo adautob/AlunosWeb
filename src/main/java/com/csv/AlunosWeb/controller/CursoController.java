@@ -18,7 +18,7 @@ public class CursoController {
 	@Autowired
 	CursoService cursoService;
 
-	@GetMapping("/cursos")
+	@GetMapping("/curso")
 	public String listaCursos(ModelMap modelMap) {
 		CursoDao cursoDao = new CursoDao();
 		modelMap.addAttribute("lista", cursoDao.SelecionarTodos());
@@ -26,22 +26,21 @@ public class CursoController {
 		return "cursos";
 	}
 
-	@GetMapping("/cursos/create")
+	@GetMapping("/curso/create")
 	public ModelAndView novoCurso() {
 		ModelAndView mv = new ModelAndView("createCurso");
 		mv.addObject("curso", new Curso());
 		return mv;
 	}
 
-	@PostMapping("/cursos/create")
+	@PostMapping("/curso/create")
 	public String salvarCurso(Curso curso) {
 		cursoService.salvar(curso);
-		return "redirect:/cursos";
+		return "redirect:/curso";
 	}
 
 	
-	
-	@GetMapping("/cursos/edit/{id}")
+	@GetMapping("/curso/edit/{id}")
 	public ModelAndView edit(@PathVariable("id") int id) {
 		return cursoService.editar(id);
 	}

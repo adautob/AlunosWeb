@@ -32,11 +32,11 @@
 			<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link"
-						href="/AlunosWeb/alunos">Alunos</a></li>
+						href="/aluno">Alunos</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/AlunosWeb/cursos">Cursos</a></li>
+						aria-current="page" href="/curso">Cursos</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="/AlunosWeb/matriculas">Matrículas</a></li>
+						href="/matricula">Matrículas</a></li>
 				</ul>
 			</div>
 		</div>
@@ -47,9 +47,9 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link"
-						href="/AlunosWeb/cursos/create">Novo Curso</a></li>
+						href="/curso/create">Novo Curso</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="/AlunosWeb/cursos">Listagem</a></li>
+						aria-current="page" href="/curso">Listagem</a></li>
 
 				</ul>
 
@@ -73,7 +73,7 @@
 					<td class="col-3"data-th-text="${curso.nomeCurso}"></td>
 					<td class="col-2"data-th-text="${curso.cargaHoraria}"></td>
 					<td class="col-1 text-center"><a class="btn btn-primary btn-sm"
-						th:href="@{'/cursos/edit/'+${curso.id}}">Editar</a></td>
+						th:href="@{'/curso/edit/'+${curso.id}}">Editar</a></td>
 				</tr>
 
 			</tbody>
