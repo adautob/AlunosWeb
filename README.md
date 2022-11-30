@@ -5,7 +5,7 @@ Deploy versão Demo em servidor Tomcat na OracleCloud.
 
 Objetivos: Utilizar das tecnologias mais modernas para construção de aplicações Web. Destacando nesse projeto o Spring Boot.
 
-Link da versão Demo: https://bit.ly/alunosweb
+Link da versão Demo: http://bit.ly/3AVMmpP
 
 ![tela_matricula](https://user-images.githubusercontent.com/95452249/196016450-08ba7562-bf46-418d-8192-61132ab00faa.png)
 
